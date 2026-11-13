@@ -1,0 +1,219 @@
+ 
+
+body {
+    background: #fff;
+    color: #111827;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    color: #087cff;
+    font-size: 27px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    margin-left: 22px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #087cff;
+}
+
+.hero-categoria {
+    padding: 75px 8%;
+    color: white;
+    background: linear-gradient(120deg, #071b36, #087cff);
+}
+
+.hero-categoria h1 {
+    font-size: clamp(35px, 5vw, 55px);
+    margin-bottom: 15px;
+}
+
+.hero-categoria p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.contenedor {
+    padding: 55px 8%;
+}
+
+.contenedor h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 25px;
+}
+
+.producto {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    transition: .3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px #00000012;
+}
+
+.producto img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: #f2f2f2;
+}
+
+.producto h3 {
+    padding: 15px 15px 8px;
+}
+
+.producto p {
+    padding: 0 15px 15px;
+    color: #087cff;
+    font-weight: bold;
+}
+
+.producto a {
+    display: block;
+    margin: 0 15px;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: #087cff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.producto a:hover {
+    background: #005dcc;
+}
+
+.volver {
+    display: inline-block;
+    margin-top: 30px;
+    color: #087cff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer {
+    padding: 35px 8%;
+    text-align: center;
+    background: #071b36;
+    color: white;
+    line-height: 2;
+}
+
+footer a {
+    color: #72b5ff;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 12px;
+    }
+}
+/* CATALOGO DE FUTBOL RUBIO SPORT */
+
+.lista-futbol {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.producto-fila {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.producto-fila:hover {
+  transform: translateY(-4px);
+}
+
+.producto-fila img {
+  width: 210px;
+  height: 180px;
+  object-fit: contain;
+  background: #f4f7fb;
+  border-radius: 12px;
+}
+
+.producto-info {
+  flex: 1;
+}
+
+.producto-info h3 {
+  color: #071a35;
+  margin-bottom: 12px;
+  font-size: 21px;
+}
+
+.producto-info p {
+  color: #667085;
+  margin-bottom: 18px;
+}
+
+.producto-info .boton {
+  display: inline-block;
+  background: #0878ed;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.producto-info .boton:hover {
+  background: #0059b8;
+}
+
+@media (max-width: 600px) {
+  .producto-fila {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .producto-fila img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .producto-info .boton {
+    text-align: center;
+    width: 100%;
+  }
+}

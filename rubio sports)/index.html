@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RUBIO SPORT | El deporte a tu alcance</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffffff;
+            color: #111827;
+        }
+
+        /* ENCABEZADO */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            background: white;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 900;
+            color: #087cff;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #087cff;
+        }
+
+        /* PORTADA PRINCIPAL */
+        .hero {
+            min-height: 485px;
+            padding: 60px 8%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            background: linear-gradient(110deg, #071d3b, #0875ed);
+            color: white;
+        }
+
+        /* TEXTO IZQUIERDO */
+        .hero-contenido {
+            width: 48%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-contenido h1 {
+            font-size: clamp(38px, 5vw, 68px);
+            line-height: 1.1;
+            font-weight: 900;
+            margin-bottom: 25px;
+            max-width: 650px;
+        }
+
+        .hero-contenido p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 500px;
+            margin-bottom: 32px;
+        }
+
+        /* BOTÓN */
+        .boton-hero {
+            display: inline-block;
+            padding: 15px 25px;
+            background: white;
+            color: #087cff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+
+        .boton-hero:hover {
+            background: #061b36;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* LOGO A LA DERECHA */
+        .hero-logo {
+            width: 48%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-logo img {
+            width: 100%;
+            max-width: 470px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* CATEGORÍAS */
+        .seccion {
+            padding: 65px 8%;
+        }
+
+        .seccion h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #071b36;
+        }
+
+        .categorias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 18px;
+        }
+
+        .categoria {
+            display: block;
+            padding: 30px 15px;
+            text-align: center;
+            background: #f2f7ff;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #071b36;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .categoria:hover {
+            background: #087cff;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* PRODUCTOS */
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 25px;
+        }
+
+        .producto {
+            border: 1px solid #eeeeee;
+            border-radius: 10px;
+            overflow: hidden;
+            padding-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .producto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px #00000012;
+        }
+
+        .producto img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            background: #f2f2f2;
+        }
+
+        .producto h3 {
+            padding: 15px 15px 8px;
+        }
+
+        .producto p {
+            padding: 0 15px 15px;
+            color: #087cff;
+            font-weight: bold;
+        }
+
+        .producto a {
+            display: block;
+            margin: 0 15px;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background: #087cff;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .producto a:hover {
+            background: #071b36;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            padding: 35px 8%;
+            text-align: center;
+            background: #071b36;
+            color: white;
+            line-height: 2;
+        }
+
+        footer a {
+            color: #72b5ff;
+        }
+
+        /* CELULARES */
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 6%;
+                gap: 30px;
+            }
+
+            .hero-contenido {
+                width: 100%;
+            }
+
+            .hero-contenido h1 {
+                font-size: 42px;
+            }
+
+            .hero-logo {
+                width: 100%;
+            }
+
+            .hero-logo img {
+                max-width: 300px;
+            }
+
+            .seccion {
+                padding: 45px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header id="inicio">
+
+        <div class="logo">RUBIO SPORT.</div>
+
+        <nav>
+            <a href="#inicio">INICIO</a>
+            <a href="#categorias">CATEGORÍAS</a>
+            <a href="#productos">PRODUCTOS</a>
+        </nav>
+
+    </header>
+
+    <!-- PORTADA PRINCIPAL -->
+    <section class="hero">
+
+        <div class="hero-contenido">
+
+            <h1>EQUÍPATE PARA GANAR.</h1>
+
+            <p>
+                Todo lo que necesitas para llevar tu pasión deportiva al
+                siguiente nivel.
+            </p>
+
+            <a href="#productos" class="boton-hero">
+                EXPLORAR PRODUCTOS
+            </a>
+
+        </div>
+
+        <!-- LOGO A LA DERECHA -->
+
+        <div class="hero-logo">
+
+            <img
+                src="logo-rubio-sport.png"
+                alt="Logo oficial de RUBIO SPORT"
+            >
+
+        </div>
+
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="seccion" id="categorias">
+
+        <h2>EXPLORA POR DEPORTE</h2>
+
+        <div class="categorias">
+
+            <a href="futbol.html" class="categoria">
+                ⚽ Fútbol
+            </a>
+
+            <a href="fitness.html" class="categoria">
+                🏋️ Fitness
+            </a>
+
+            <a href="running.html" class="categoria">
+                🏃 Running
+            </a>
+
+            <a href="baloncesto.html" class="categoria">
+                🏀 Baloncesto
+            </a>
+
+            <a href="tenis.html" class="categoria">
+                🎾 Tenis
+            </a>
+
+            <a href="ciclismo.html" class="categoria">
+                🚴 Ciclismo
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="seccion" id="productos">
+
+        <h2>PRODUCTOS DESTACADOS</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+
+                <img
+                    src="https://placehold.co/500x350?text=Balon+de+futbol"
+                    alt="Balón de fútbol"
+                >
+
+                <h3>Balón de fútbol</h3>
+                <p>Consulta el precio</p>
+
+                <a href="#" target="_blank">
+                    VER PRODUCTO
+                </a>
+
+            </div>
+
+            <div class="producto">
+
+                <img
+                    src="https://placehold.co/500x350?text=Tenis+deportivos"
+                    alt="Tenis deportivos"
+                >
+
+                <h3>Tenis deportivos</h3>
+                <p>Consulta el precio</p>
+
+                <a href="#" target="_blank">
+                    VER PRODUCTO
+                </a>
+
+            </div>
+
+            <div class="producto">
+
+                <img
+                    src="https://placehold.co/500x350?text=Mancuernas"
+                    alt="Mancuernas"
+                >
+
+                <h3>Mancuernas</h3>
+                <p>Consulta el precio</p>
+
+                <a href="#" target="_blank">
+                    VER PRODUCTO
+                </a>
+
+            </div>
+
+            <div class="producto">
+
+                <img
+                    src="https://placehold.co/500x350?text=Camiseta+deportiva"
+                    alt="Camiseta deportiva"
+                >
+
+                <h3>Camiseta deportiva</h3>
+                <p>Consulta el precio</p>
+
+                <a href="#" target="_blank">
+                    VER PRODUCTO
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+        <h2>RUBIO SPORT.</h2>
+
+        <p>EL DEPORTE A TU ALCANCE</p>
+
+        <p>Encuentra productos para tu pasión deportiva.</p>
+
+        <p>© 2026 RUBIO SPORT. Todos los derechos reservados.</p>
+
+        <small>
+            Somos una página de recomendaciones. Las compras se realizan
+            en las tiendas correspondientes.
+        </small>
+
+    </footer>
+
+</body>
+</html>
